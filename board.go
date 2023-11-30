@@ -13,6 +13,11 @@ func (b *Board) Init() {
 			es := EmptySpace{}
 			es.Init()
 			b.gameBoard[i][j] = es.Piece
+			if i == 1 || i == 6 {
+				p := Pawn{}                 //declare struct
+				p.Init()                    //initialize type
+				b.gameBoard[i][j] = p.Piece //assign piece to board position
+			}
 		}
 	}
 
@@ -30,4 +35,8 @@ func (b *Board) Init() {
 		}
 		fmt.Println()
 	}
+}
+
+func (b *Board) movePiece() {
+	
 }

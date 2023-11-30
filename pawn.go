@@ -3,6 +3,13 @@ package main
 //type piece_type string
 
 type Pawn struct {
-	//Piece
-	//type piece_type string := "xp"
+	Piece
+}
+
+func (p *Pawn) Init() {
+	p.pieceType = "p"
+}
+
+func (p *Pawn) getPawn() string {
+	return p.pieceType
 }
