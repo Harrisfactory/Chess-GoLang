@@ -14,8 +14,13 @@ func (b *Board) Init() {
 			es.Init()
 			b.gameBoard[i][j] = es.Piece
 			if i == 1 || i == 6 {
-				p := Pawn{}                 //declare struct
-				p.Init()                    //initialize type
+				p := Pawn{} //declare struct
+				//initialize type
+				if i == 1 {
+					p.Init("b")
+				} else {
+					p.Init("w")
+				}
 				b.gameBoard[i][j] = p.Piece //assign piece to board position
 			}
 		}
@@ -28,9 +33,9 @@ func (b *Board) Init() {
 	for i := 0; i < 8; i++ {
 		for j := 0; j < 8; j++ {
 			if j == 0 {
-				fmt.Print(" " + b.gameBoard[i][j].getType() + " ")
+				fmt.Print(" " + b.gameBoard[i][j].GetType() + " ")
 			} else {
-				fmt.Print("| " + b.gameBoard[i][j].getType() + " ")
+				fmt.Print(" | " + b.gameBoard[i][j].GetType() + " ")
 			}
 		}
 		fmt.Println()
@@ -38,5 +43,5 @@ func (b *Board) Init() {
 }
 
 func (b *Board) movePiece() {
-	
+
 }

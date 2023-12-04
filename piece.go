@@ -1,9 +1,10 @@
 package main
 
 type Piece struct {
-	pieceType string
+	pieceType  string
+	pieceColor string
 }
 
-func (p *Piece) getType() string {
-	return p.pieceType
+func (p *Piece) GetType() string {
+	return p.pieceType + p.pieceColor
 }

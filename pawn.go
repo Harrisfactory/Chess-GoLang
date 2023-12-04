@@ -1,15 +1,14 @@
 package main
 
-//type piece_type string
-
 type Pawn struct {
 	Piece
 }
 
-func (p *Pawn) Init() {
+func (p *Pawn) Init(pieceColor string) {
 	p.pieceType = "p"
+	p.pieceColor = pieceColor
 }
 
 func (p *Pawn) getPawn() string {
-	return p.pieceType
+	return p.pieceType + p.pieceColor
 }
